@@ -162,7 +162,7 @@ public class FirebaseAuthenticationPlugin extends ReflectiveCordovaPlugin implem
                 new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
                     @Override
                     public void onVerificationCompleted(PhoneAuthCredential credential) {
-                        signInWithPhoneCredential(credential);
+                        //signInWithPhoneCredential(credential); 
                     }
 
                     @Override
@@ -183,6 +183,23 @@ public class FirebaseAuthenticationPlugin extends ReflectiveCordovaPlugin implem
         this.firebaseAuth.signOut();
 
         callbackContext.success();
+    }
+
+    @CordovaMethod
+    private void linkWithEmail(String verId, String smsCode, CallbackContext callbackContext) {
+            FirebaseUser user = this.firebaseAuth.getCurrentUser();
+            PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verId, smsCode);
+            user.linkWithCredential(credential)
+                .addOnCompleteListener(cordova.getActivity(), new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            callbackContext.success();
+                        } else {
+                            callbackContext.error(task.getException().getMessage());
+                        }
+                    }
+                });
     }
 
     @CordovaMethod
@@ -216,23 +233,6 @@ public class FirebaseAuthenticationPlugin extends ReflectiveCordovaPlugin implem
                 }
             }
         };
-    }
-
-    @CordovaMethod
-    private void linkWithEmail(String verId, String smsCode,CallbackContext callbackContext) {
-        FirebaseUser user = this.firebaseAuth.getCurrentUser();
-        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verId, smsCode);
-        user.linkWithCredential(credential)
-            .addOnCompleteListener(cordova.getActivity(), new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(Task<AuthResult> task) {
-                    if (task.isSuccessful()) {
-                        callbackContext.success();
-                    } else {
-                        callbackContext.error(task.getException().getMessage());
-                    }
-                }
-            });
     }
 
     private static PluginResult getProfileResult(FirebaseUser user) {

@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-firebase-authentication-riptide",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Cordova plugin for Firebase Authentication (RIPTIDE)",
   "cordova": {
     "id": "cordova-plugin-firebase-authentication-riptide",
