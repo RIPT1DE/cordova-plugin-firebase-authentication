@@ -18,6 +18,7 @@ import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 import com.google.firebase.auth.TwitterAuthProvider;
 import com.google.firebase.FirebaseException;
+import com.google.firebase.auth.AuthResult;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.PluginResult;
