@@ -228,7 +228,7 @@ public class FirebaseAuthenticationPlugin extends ReflectiveCordovaPlugin implem
                     if (task.isSuccessful()) {
                         callbackContext.success();
                     } else {
-                        callbackContext.error(task.getException().getMessage())
+                        callbackContext.error(task.getException().getMessage());
                     }
                 }
             });
