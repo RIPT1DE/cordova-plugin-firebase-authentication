@@ -1,9 +1,9 @@
 {
-  "name": "cordova-plugin-firebase-authentication",
-  "version": "2.0.1",
-  "description": "Cordova plugin for Firebase Authentication",
+  "name": "cordova-plugin-firebase-authentication-riptide",
+  "version": "1.0.0",
+  "description": "Cordova plugin for Firebase Authentication (RIPTIDE)",
   "cordova": {
-    "id": "cordova-plugin-firebase-authentication",
+    "id": "cordova-plugin-firebase-authentication-riptide",
     "platforms": [
       "ios",
       "android"
@@ -11,18 +11,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chemerisuk/cordova-plugin-firebase-authentication.git"
+    "url": "git+https://github.com/RIPT1DE/cordova-plugin-firebase-authentication.git"
   },
-  "author": "Maksim Chemerisuk <chemerisuk@gmail.com> (https://github.com/chemerisuk)",
+  "author": "Talha Siddiqi <siddiqi.talha1@gmail.com> (https://github.com/RIPT1DE)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/chemerisuk/cordova-plugin-firebase-authentication/issues"
+    "url": "https://github.com/RIPT1DE/cordova-plugin-firebase-authentication/issues"
   },
   "scripts": {
     "version": "replace -s 'version=\"(.+)(?=\">)' 'version=\"'$npm_package_version plugin.xml && git add plugin.xml",
     "postversion": "git push && git push --tags"
   },
-  "homepage": "https://github.com/chemerisuk/cordova-plugin-firebase-authentication#readme",
+  "homepage": "https://github.com/RIPT1DE/cordova-plugin-firebase-authentication",
   "keywords": [
     "cordova",
     "firebase",

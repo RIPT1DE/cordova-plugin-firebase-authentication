@@ -76,6 +76,11 @@ module.exports = {
             exec(resolve, reject, PLUGIN_NAME, "signOut", []);
         });
     },
+    linkWithEmail: function(email, password, verId, smsCode) {
+        return new Promise(function(resolve, reject) {
+            exec(resolve, reject, PLUGIN_NAME, "linkWithEmail", [verId, smsCode]);
+        });
+    },
     setLanguageCode: function(languageCode) {
         return new Promise(function(resolve, reject) {
             exec(resolve, reject, PLUGIN_NAME, "setLanguageCode", [languageCode]);
